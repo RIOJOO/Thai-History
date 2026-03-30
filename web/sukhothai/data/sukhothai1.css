@@ -1,0 +1,96 @@
+/* --- ส่วนหลักของหน้า (Global Styles) --- */
+body {
+    background-color: #fdf5e6; /* สีพื้นหลังเหมือนกระดาษปาปิรุสหรือหน้ากระดาษหนังสือเก่า */
+    color: #4b3621;         /* สีตัวอักษรน้ำตาลเข้ม (Sepia) เพื่อให้อ่านง่ายและเข้ากัน */
+    font-family: 'Sarabun', 'Pattaya', 'Helvetica Neue', Arial, sans-serif; /* แนะนำให้หา Font สวยๆ มาใส่เพิ่มเติม */
+    margin: 0;
+    padding: 0;
+    line-height: 1.8; /* เพิ่มระยะบรรทัดเพื่อให้อ่านง่ายไม่ลายตา */
+}
+
+/* --- การจัดวาง (Layout) --- */
+.container {
+    max-width: 800px; /* จำกัดความกว้างของเนื้อหาเพื่อให้เนื้อหาอยู่กึ่งกลาง */
+    margin: 40px auto;  /* จัดให้อยู่กลางหน้าจอทั้งบนล่างและซ้ายขวา */
+    padding: 30px;
+    background-color: #fffaf0; /* สีพื้นหลังของกรอบเนื้อหาให้สว่างกว่าพื้นหลังนิดหน่อย */
+    border: 1px solid #dcdcdc;  /* เพิ่มกรอบจางๆ */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* เพิ่มเงาให้ดูมีมิติ */
+    border-radius: 8px; /* ทำมุมโค้งเล็กน้อย */
+}
+
+/* --- หัวข้อ (Headings) --- */
+h1 {
+    font-family: 'Pattaya', sans-serif; /* หากต้องการ Font ที่ดูย้อนยุคหน่อย (สามารถหา Font Thai เพิ่มเติมได้) */
+    color: #8b4513; /* สีน้ำตาลแดงเหมือนศิลาจารึก */
+    text-align: center; /* จัดให้อยู่กึ่งกลาง */
+    border-bottom: 2px solid #cd853f; /* เพิ่มเส้นใต้หัวข้อสีทองน้ำตาล */
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* --- ข้อความเนื้อหา (Paragraphs) --- */
+p {
+    margin-bottom: 20px;
+    text-indent: 2em; /* เพิ่มการย่อหน้าเพื่อความสวยงามตามแบบหนังสือเก่า */
+    font-size: 1.1em;
+}
+
+/* --- รายการ (Lists) --- */
+ul {
+    list-style-type: none; /* เอาจุดกลมๆ ข้างหน้าออก */
+    padding: 0;
+    margin: 30px 0;
+}
+
+li {
+    background-color: #fef8f0; /* สีพื้นหลังของแต่ละรายการ */
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-left: 5px solid #8b4513; /* เพิ่มแถบสีข้างหน้าเหมือนเมนู */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* เพิ่มเอฟเฟกต์ตอนเอาเมาส์ไปชี้ */
+}
+
+li:hover {
+    background-color: #fcecd9; /* เปลี่ยนสีพื้นหลังเมื่อเอาเมาส์ไปชี้ */
+}
+
+/* --- การเชื่อมโยง (Links) --- */
+a {
+    color: #4b3621; /* สีลิงก์เหมือนตัวอักษรปกติ */
+    text-decoration: none; /* เอาเส้นใต้ปกติออก */
+    font-weight: bold;
+    display: block; /* ทำให้ลิงก์คลุมพื้นที่ทั้งหมดของ li */
+}
+
+li a:hover {
+    color: #8b4513; /* เปลี่ยนสีลิงก์เมื่อเอาเมาส์ไปชี้ */
+}
+
+/* --- ปุ่มกลับหน้าหลัก (Back Link) --- */
+.container > a {
+    display: inline-block !important; /* ยกเลิก display: block; ด้านบนเฉพาะลิงก์นี้ */
+    margin-top: 20px;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background-color: transparent; /* ไม่มีพื้นหลัง */
+    border: 2px solid #8b4513; /* กรอบสีน้ำตาลแดง */
+    border-radius: 25px; /* ทำมุมโค้งเหมือนปุ่ม */
+    color: #8b4513 !important;
+    transition: all 0.3s ease;
+}
+
+.container > a:hover {
+    background-color: #8b4513; /* เปลี่ยนพื้นหลังเป็นสีน้ำตาลเมื่อเอาเมาส์ไปชี้ */
+    color: #ffffff !important; /* เปลี่ยนสีตัวอักษรเป็นสีขาว */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* เพิ่มเงาเมื่อเอาเมาส์ไปชี้ */
+}
+
+/* --- เพิ่มเติมสำหรับการแสดงผลบนมือถือ --- */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+}

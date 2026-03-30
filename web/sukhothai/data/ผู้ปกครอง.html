@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sukhothai1.css">
+</head>
+<body>
+    <div class="container">
+    <h1>รายนามกษัตริย์ยุคสุโขทัย</h1>
+    <p>คลิกที่รายชื่อเพื่อดูช่วงเวลาครองราชย์</p>
+    
+    <ul id="king-list"></ul>
+    
+    <div id="details" style="margin-top: 20px; font-weight: bold; color: #8B4513;"></div>
+</div>
+
+<script>
+    <script>
+    window.onload = function() {
+        const kings = [
+            { id: 1, name: "พ่อขุนศรีอินทราทิตย์", period: "พ.ศ. 1792 - ไม่ปรากฏปีแน่ชัด" },
+            { id: 2, name: "พ่อขุนบานเมือง", period: "ไม่ปรากฏปีแน่ชัด - พ.ศ. 1822" },
+            { id: 3, name: "พ่อขุนรามคำแหงมหาราช", period: "พ.ศ. 1822 - 1841" },
+            { id: 4, name: "พระยาเลอไทย", period: "พ.ศ. 1841 - 1866" },
+            { id: 5, name: "พระยางัวนำถุม", period: "พ.ศ. 1866 - 1890" },
+            { id: 6, name: "พระมหาธรรมราชาที่ 1 (พญาลิไท)", period: "พ.ศ. 1890 - 1911" },
+            { id: 7, name: "พระมหาธรรมราชาที่ 2", period: "พ.ศ. 1911 - 1942" },
+            { id: 8, name: "พระมหาธรรมราชาที่ 3 (พญาไสลือไท)", period: "พ.ศ. 1942 - 1962" },
+            { id: 9, name: "พระมหาธรรมราชาที่ 4 (บรมปาล)", period: "พ.ศ. 1962 - 1981" }
+        ];
+
+        const listContainer = document.getElementById('king-list');
+        const detailsContainer = document.getElementById('details');
+
+        if (listContainer) { // ตรวจสอบว่ามี element นี้อยู่จริง
+            kings.forEach(king => {
+                const li = document.createElement('li');
+                const btn = document.createElement('button');
+                btn.className = 'king-btn'; // ใช้ Class ที่เราแต่งไว้ใน CSS
+                btn.innerText = `ลำดับที่ ${king.id}: ${king.name}`;
+                
+                btn.onclick = () => {
+                    detailsContainer.innerHTML = `<h3>${king.name}</h3><p>ครองราชย์: ${king.period}</p>`;
+                };
+
+                li.appendChild(btn);
+                listContainer.appendChild(li);
+            });
+        }
+    };
+</script>
+</body>
+</html>
